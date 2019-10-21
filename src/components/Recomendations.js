@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from './Card';
 
 const Recomendations = ({ searchedPodcast, recommendationsList }) => {
 	const expandDescription = e => {
@@ -16,28 +17,13 @@ const Recomendations = ({ searchedPodcast, recommendationsList }) => {
 		<div>
 			<h2>Based on your interest in {searchedPodcast.title_original}, we'd recommend:</h2>
 			<ul className="recommendationsGallery">
-				{recommendationsList.map((recommendation, index) => {
+				{recommendationsList.map(recommendation => {
 					return (
-						<li key={recommendation.id} className="card">
-							<div className="titleSection">
-								<a href={recommendation.website} className="logoImageContainer">
-									<img src={recommendation.image} alt="" />
-								</a>
-								<div className="showTitleContainer">
-									<a className="title" href={recommendation.website}>
-										<h3>{recommendation.title}</h3>
-									</a>
-									<h4>{recommendation.publisher}</h4>
-								</div>
-							</div>
-							<div>
-								<p className="description-closed">
-									{/* regex included here because description is sometimes encapsulated in HTML tags */}
-									{recommendation.description.replace(/<[^>]+>/g, '')}
-								</p>
-								<button onClick={expandDescription}>Expand</button>
-							</div>
-						</li>
+						<Card
+							key={recommendation.id}
+							recommendation={recommendation}
+							expandDescription={expandDescription}
+						/>
 					);
 				})}
 			</ul>
