@@ -45,7 +45,7 @@ const Card = ({ podcast }) => {
 				</p>
 				{/* if the description is too long, add a button to expand it */}
 				{podcast.description.length > 180 ? (
-					<button className={cardStyles.cardExpand} onClick={expandDescription}>
+					<button className={cardStyles.cardDescriptionExpandButton} onClick={expandDescription}>
 						<img className="openIcon svgIcon" src={plusIcon} alt="" />
 						<img className="closedIcon svgIcon" src={minusIcon} alt="" />
 					</button>

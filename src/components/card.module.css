@@ -34,7 +34,7 @@
 }
 
 .cardTitle {
-	margin-left: 20px;
+	margin-left: 40px;
 }
 
 .cardSubtitle {
@@ -52,18 +52,18 @@
 	margin: 20px 0px;
 }
 
-.cardExpand {
+.cardDescriptionExpandButton {
+	align-self: center;
 	background: none;
+	cursor: pointer;
 	border: none;
 	width: 60px;
-	cursor: pointer;
-	align-self: center;
 }
-.cardExpand:focus {
+.cardDescriptionExpandButton:focus {
 	outline: 0;
 }
 
-.cardExpand:hover {
+.cardDescriptionExpandButton:hover {
 	filter: brightness(0) saturate(100%) invert(6%) sepia(26%) saturate(3761%) hue-rotate(324deg) brightness(101%)
 		contrast(94%);
 }
