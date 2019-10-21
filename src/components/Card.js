@@ -40,11 +40,11 @@ const Card = ({ podcast }) => {
 			</div>
 			<div className={cardStyles.cardDescription}>
 				<p className="descriptionClosed">
-					{/* regex included here because description is sometimes encapsulated in HTML tags */}
-					{podcast.description.replace(/<[^>]+>/g, '')}
+					{/* regex included here because description is sometimes encapsulated in HTML tags and entities. */}
+					{podcast.description.replace(/<[^>]+>/g, '').replace(/&#{0,1}[a-z0-9]+;/gi, ' ')}
 				</p>
 				{/* if the description is too long, add a button to expand it */}
-				{podcast.description.length > 175 ? (
+				{podcast.description.length > 180 ? (
 					<button className={cardStyles.cardExpand} onClick={expandDescription}>
 						<img className="openIcon svgIcon" src={plusIcon} alt="" />
 						<img className="closedIcon svgIcon" src={minusIcon} alt="" />

@@ -215,13 +215,13 @@ font-family: 'Roboto', sans-serif;
 
 html {
 	scroll-behavior: smooth;
+	font-size: 62.5%;
 }
 
 .App {
 	background: linear-gradient(45deg, #64485c, #501b1d);
 	color: white;
 	font-family: 'Roboto', sans-serif;
-	font-size: 62.5%;
 	line-height: 1.6;
 }
 
@@ -253,17 +253,17 @@ figure {
 
 h1 {
 	padding-top: 25vh;
-	font-size: 6rem;
+	font-size: 9.6rem;
 	font-family: 'Monoton', cursive;
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: 3.2rem;
 	font-weight: bold;
 }
 
 h4 {
-	font-size: 1.2rem;
+	font-size: 1.9rem;
 	color: #ababab;
 }
 
@@ -271,7 +271,7 @@ p,
 button,
 input,
 label {
-	font-size: 1.6rem;
+	font-size: 2rem;
 }
 
 a {
@@ -289,7 +289,18 @@ a:hover {
 
 .descriptionClosed {
 	overflow: hidden;
-	height: 85px;
+	height: 70px;
+}
+
+.openIcon {
+	display: block;
+}
+
+.closedIcon {
+	display: none;
+}
+.svgIcon {
+	filter: invert(100%) sepia(94%) saturate(0%) hue-rotate(194deg) brightness(105%) contrast(105%);
 }
 
 .button {
@@ -306,15 +317,4 @@ a:hover {
 .button:hover {
 	color: #2e1114;
 	background: #83677b;
-}
-
-.openIcon {
-	display: block;
-}
-
-.closedIcon {
-	display: none;
-}
-.svgIcon {
-	filter: invert(100%) sepia(94%) saturate(0%) hue-rotate(194deg) brightness(105%) contrast(105%);
 }

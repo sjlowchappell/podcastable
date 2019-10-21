@@ -4,7 +4,6 @@
 	box-shadow: 10px 10px 10px #501b1d;
 	background: #83677b;
 	border-radius: 5px;
-	transition: 0.3s all;
 }
 
 .cardHeading {
@@ -39,7 +38,7 @@
 }
 
 .cardSubtitle {
-	font-size: 1.2rem;
+	font-size: 2.2rem;
 	color: #ababab;
 }
 
@@ -47,8 +46,8 @@
 	padding: 20px 0px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 }
+
 .cardDescription p {
 	margin: 20px 0px;
 }
@@ -58,6 +57,10 @@
 	border: none;
 	width: 60px;
 	cursor: pointer;
+	align-self: center;
+}
+.cardExpand:focus {
+	outline: 0;
 }
 
 .cardExpand:hover {
