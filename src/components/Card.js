@@ -6,7 +6,7 @@ import minusIcon from '../assets/minus.svg';
 const Card = ({ podcast }) => {
 	// Expand description allows user to open and close description based on length
 	const expandDescription = e => {
-		e.preventDefault();
+		e.stopPropagation();
 		const description = e.target.parentElement.previousElementSibling;
 		const icon = e.target;
 		if (description.classList.contains('descriptionClosed')) {
@@ -44,10 +44,10 @@ const Card = ({ podcast }) => {
 					{podcast.description.replace(/<[^>]+>/g, '').replace(/&#{0,1}[a-z0-9]+;/gi, ' ')}
 				</p>
 				{/* if the description is too long, add a button to expand it */}
-				{podcast.description.length > 180 ? (
+				{podcast.description.length > 175 ? (
 					<button className={cardStyles.cardDescriptionExpandButton} onClick={expandDescription}>
-						<img className="openIcon svgIcon" src={plusIcon} alt="" />
-						<img className="closedIcon svgIcon" src={minusIcon} alt="" />
+						<img className="openIcon svgIcon" src={plusIcon} alt="Expand Description" />
+						<img className="closedIcon svgIcon" src={minusIcon} alt="Collapse Description" />
 					</button>
 				) : null}
 			</div>
