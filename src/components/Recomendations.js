@@ -14,20 +14,22 @@ const Recomendations = ({ searchedPodcast, recommendationsList }) => {
 	};
 
 	return (
-		<div>
-			<h2>Based on your interest in {searchedPodcast.title_original}, we'd recommend:</h2>
-			<ul className="recommendationsGallery">
-				{recommendationsList.map(recommendation => {
-					return (
-						<Card
-							key={recommendation.id}
-							recommendation={recommendation}
-							expandDescription={expandDescription}
-						/>
-					);
-				})}
-			</ul>
-		</div>
+		<section className="results">
+			<div className="wrapper">
+				<h2>Based on your interest in {searchedPodcast.title_original}, we'd recommend:</h2>
+				<ul className="recommendationsGallery">
+					{recommendationsList.map(recommendation => {
+						return (
+							<Card
+								key={recommendation.id}
+								recommendation={recommendation}
+								expandDescription={expandDescription}
+							/>
+						);
+					})}
+				</ul>
+			</div>
+		</section>
 	);
 };
 
