@@ -210,8 +210,11 @@ html {
 	font-size: 62.5%;
 	background: linear-gradient(45deg, #64485c, #501b1d);
 	color: white;
-	font-family: 'Roboto', sans-serif;
 	line-height: 1.6;
+}
+
+.App {
+	font-family: 'Roboto', sans-serif;
 }
 
 .wrapper {
