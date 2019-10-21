@@ -6,8 +6,8 @@ const Header = () => {
 		<header>
 			<div className="wrapper">
 				<h1>Podcastable</h1>
-				<h2>Listen to more of what you love.</h2>
-				<div className={headerStyles.searchLink}>
+				<p className={headerStyles.subtitle}>Listen to more of what you love.</p>
+				<div className={headerStyles.linkToSearch}>
 					<a href="#search">
 						<svg
 							className={headerStyles.chevron}

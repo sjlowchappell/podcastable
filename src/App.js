@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import Recomendations from './components/Recomendations.js';
 import Header from './components/Header.js';
-import Footer from './components/Footer.js';
 import Search from './components/Search.js';
+import Recomendations from './components/Recomendations.js';
+import Footer from './components/Footer.js';
 
 class App extends React.Component {
 	constructor() {

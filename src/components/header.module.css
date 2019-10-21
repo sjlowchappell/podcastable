@@ -10,24 +10,28 @@ header {
 	background-attachment: fixed;
 }
 
+.subtitle {
+	font-size: 2rem;
+	margin: 20px 0px;
+}
+
+.linkToSearch {
+	width: 200px;
+	margin: 15vh auto;
+}
+
+.linkToSearch:hover .chevron,
+.linkToSearch:hover p {
+	color: #83677b;
+	fill: #83677b;
+}
+
 .chevron {
 	width: 80px;
 	fill: white;
 	animation: bounce 4s;
 	animation-iteration-count: infinite;
 }
-
-.searchLink {
-	width: 200px;
-	margin: 15vh auto;
-}
-
-.searchLink:hover .chevron,
-.searchLink:hover p {
-	color: #83677b;
-	fill: #83677b;
-}
-
 /* ANIMATIONS */
 
 @keyframes bounce {
