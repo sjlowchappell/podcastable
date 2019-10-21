@@ -203,22 +203,11 @@ template {
 	box-sizing: border-box;
 }
 
-/* 
-
-#64485C
-#ADADAD
-font-family: 'Monoton', cursive;
-font-family: 'Roboto', sans-serif;
-*/
-
 /* Global STYLES */
 
 html {
 	scroll-behavior: smooth;
 	font-size: 62.5%;
-}
-
-.App {
 	background: linear-gradient(45deg, #64485c, #501b1d);
 	color: white;
 	font-family: 'Roboto', sans-serif;
@@ -292,6 +281,7 @@ a:hover {
 .closedIcon {
 	display: none;
 }
+
 .svgIcon {
 	filter: invert(100%) sepia(94%) saturate(0%) hue-rotate(194deg) brightness(105%) contrast(105%);
 }
