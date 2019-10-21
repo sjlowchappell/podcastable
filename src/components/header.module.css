@@ -1,0 +1,47 @@
+header {
+	height: 100vh;
+	text-align: center;
+	background: url(../assets/rsz_matt-botsford-197870-unsplash.jpg);
+	background-color: #64485c;
+	background-repeat: no-repeat;
+	background-blend-mode: multiply;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.chevron {
+	width: 80px;
+	fill: white;
+	animation: bounce 4s;
+	animation-iteration-count: infinite;
+}
+
+.searchLink {
+	width: 200px;
+	margin: 15vh auto;
+}
+
+.searchLink:hover .chevron,
+.searchLink:hover p {
+	color: #83677b;
+	fill: #83677b;
+}
+
+/* ANIMATIONS */
+
+@keyframes bounce {
+	0%,
+	25%,
+	50%,
+	75%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-20px);
+	}
+	60% {
+		transform: translateY(-12px);
+	}
+}

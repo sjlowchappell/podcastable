@@ -1,0 +1,12 @@
+footer {
+	text-align: center;
+	background: #2e1114;
+	padding: 60px 0px;
+	margin-top: 200px;
+}
+
+.apiLogo {
+	width: 300px;
+	margin-bottom: 20px;
+	display: inline-block;
+}

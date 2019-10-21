@@ -1,4 +1,5 @@
 import React from 'react';
+import headerStyles from './header.module.css';
 
 const Header = () => {
 	return (
@@ -6,10 +7,10 @@ const Header = () => {
 			<div className="wrapper">
 				<h1>Podcastable</h1>
 				<h2>Listen to more of what you love.</h2>
-				<div className="searchLink">
+				<div className={headerStyles.searchLink}>
 					<a href="#search">
 						<svg
-							className="chevron bounce"
+							className={headerStyles.chevron}
 							viewBox="1 -27 511.99982 511"
 							xmlns="http://www.w3.org/2000/svg"
 						>

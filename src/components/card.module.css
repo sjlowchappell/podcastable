@@ -1,0 +1,23 @@
+.card {
+	padding: 20px;
+	width: 95%;
+	margin: 40px auto;
+	box-shadow: 10px 10px 10px #501b1d;
+	background: #83677b;
+	color: white;
+}
+
+.titleSection {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.logoImageContainer {
+	width: 20%;
+	min-width: 100px;
+}
+
+.showTitleContainer {
+	margin-left: 15px;
+}

@@ -1,21 +1,32 @@
 import React from 'react';
+import cardStyles from './card.module.css';
 
-const Card = ({ recommendation, expandDescription }) => {
+const Card = ({ recommendation }) => {
+	const expandDescription = e => {
+		const description = e.target.previousElementSibling;
+		if (description.classList.contains('descriptionClosed')) {
+			description.classList.remove('descriptionClosed');
+			description.classList.add('descriptionOpen');
+		} else {
+			description.classList.remove('descriptionOpen');
+			description.classList.add('descriptionClosed');
+		}
+	};
 	return (
-		<li className="card">
-			<div className="titleSection">
-				<a href={recommendation.website} className="logoImageContainer">
+		<li className={cardStyles.card}>
+			<div className={cardStyles.titleSection}>
+				<a href={recommendation.website} className={cardStyles.logoImageContainer}>
 					<img src={recommendation.image} alt="" />
 				</a>
-				<div className="showTitleContainer">
-					<a className="title" href={recommendation.website}>
+				<div className={cardStyles.showTitleContainer}>
+					<a className={cardStyles.title} href={recommendation.website}>
 						<h3>{recommendation.title}</h3>
 					</a>
 					<h4>{recommendation.publisher}</h4>
 				</div>
 			</div>
 			<div>
-				<p className="description-closed">
+				<p className="descriptionClosed">
 					{/* regex included here because description is sometimes encapsulated in HTML tags */}
 					{recommendation.description.replace(/<[^>]+>/g, '')}
 				</p>

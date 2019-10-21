@@ -80,20 +80,20 @@ class App extends React.Component {
 				<Header />
 
 				<main>
-					<section id="search" className="searchSection">
-						<Search
-							handleSubmit={this.handleSubmit}
-							handleChange={this.handleChange}
-							podcastInput={this.state.podcastInput}
-						/>
-					</section>
+					<Search
+						handleSubmit={this.handleSubmit}
+						handleChange={this.handleChange}
+						podcastInput={this.state.podcastInput}
+					/>
 
-					{this.state.recommendationsList.length !== 0 ? (
-						<Recomendations
-							recommendationsList={this.state.recommendationsList}
-							searchedPodcast={this.state.searchedPodcast}
-						/>
-					) : null}
+					<section id="results">
+						{this.state.recommendationsList.length !== 0 ? (
+							<Recomendations
+								recommendationsList={this.state.recommendationsList}
+								searchedPodcast={this.state.searchedPodcast}
+							/>
+						) : null}
+					</section>
 				</main>
 
 				<Footer />
