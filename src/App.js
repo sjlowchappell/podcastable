@@ -16,6 +16,9 @@ class App extends React.Component {
 		};
 	}
 
+	API_URL = 'https://listen-api.listennotes.com/api/v2/';
+	API_KEY = '576ca4c5e0c347949c82d6b8f674a9cc';
+
 	handleSubmit = e => {
 		e.preventDefault();
 		this.fetchSearchData(this.state.podcastInput);
@@ -32,9 +35,9 @@ class App extends React.Component {
 
 	async fetchSearchData(input) {
 		try {
-			const apiData = await axios.get('https://listen-api.listennotes.com/api/v2/search', {
+			const apiData = await axios.get(`${this.API_URL}search`, {
 				headers: {
-					'X-ListenAPI-Key': '576ca4c5e0c347949c82d6b8f674a9cc',
+					'X-ListenAPI-Key': this.API_KEY,
 				},
 				params: {
 					q: input,
@@ -56,17 +59,14 @@ class App extends React.Component {
 
 	async fetchRecommendationData(id) {
 		try {
-			const apiData = await axios.get(
-				`https://listen-api.listennotes.com/api/v2/podcasts/${id}/recommendations`,
-				{
-					headers: {
-						'X-ListenAPI-Key': '576ca4c5e0c347949c82d6b8f674a9cc',
-					},
-					params: {
-						id: id,
-					},
+			const apiData = await axios.get(`${this.API_URL}podcasts/${id}/recommendations`, {
+				headers: {
+					'X-ListenAPI-Key': this.API_KEY,
 				},
-			);
+				params: {
+					id: id,
+				},
+			});
 			const recommendations = apiData.data.recommendations;
 			return recommendations;
 		} catch (err) {
