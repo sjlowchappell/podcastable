@@ -1,42 +1,22 @@
 .searchSection {
 	text-align: center;
-	padding: 30vh 0;
-}
-
-.searchSection p {
-	margin: 40px 0px;
+	padding: 10vh 0px;
 }
 
 .podSVG {
 	width: 100px;
 	fill: white;
 }
-.podcastSubmitContainer {
+
+.formContainer {
 	display: flex;
 	flex-direction: column;
 	width: 500px;
 	margin: 0 auto;
 }
 
-.podcastSubmitInput {
-	width: 225px;
-	margin: 20px auto;
-	height: 40px;
-	font-size: 1rem;
-}
-
-.podcastSubmitButton {
-	padding: 10px;
-	background: #2e1114;
-	color: white;
-	font-size: 1rem;
-	border: none;
-	border-radius: 5px;
-	width: 150px;
-	margin: 0 auto;
-}
-
-.podcastSubmitButton:hover {
-	color: #2e1114;
-	background: #83677b;
+.formInput,
+.description {
+	margin: 40px auto;
+	padding: 5px;
 }
