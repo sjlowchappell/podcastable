@@ -265,6 +265,8 @@ a:hover {
 	color: #501b1d;
 }
 
+/* Classes for expanding description on cards */
+
 .descriptionOpen {
 	overflow: none;
 }
@@ -285,6 +287,8 @@ a:hover {
 .svgIcon {
 	filter: invert(100%) sepia(94%) saturate(0%) hue-rotate(194deg) brightness(105%) contrast(105%);
 }
+
+/* Button styling */
 
 .button {
 	padding: 10px;
