@@ -10,19 +10,13 @@ const Card = ({ podcast }) => {
 		const description = e.target.parentElement.previousElementSibling;
 		const icon = e.target;
 		if (description.classList.contains('descriptionClosed')) {
-			description.classList.remove('descriptionClosed');
-			description.classList.add('descriptionOpen');
-			icon.classList.remove('openIcon');
-			icon.classList.add('closedIcon');
-			icon.nextElementSibling.classList.remove('closedIcon');
-			icon.nextElementSibling.classList.add('openIcon');
+			description.classList.toggle('descriptionClosed');
+			icon.classList.toggle('closedIcon');
+			icon.nextElementSibling.classList.toggle('closedIcon');
 		} else {
-			description.classList.remove('descriptionOpen');
-			description.classList.add('descriptionClosed');
-			icon.classList.remove('openIcon');
-			icon.classList.add('closedIcon');
-			icon.previousElementSibling.classList.remove('closedIcon');
-			icon.previousElementSibling.classList.add('openIcon');
+			description.classList.toggle('descriptionClosed');
+			icon.classList.toggle('closedIcon');
+			icon.previousElementSibling.classList.toggle('closedIcon');
 		}
 	};
 	return (
@@ -46,7 +40,7 @@ const Card = ({ podcast }) => {
 				{/* if the description is too long, add a button to expand it */}
 				{podcast.description.length > 175 ? (
 					<button className={cardStyles.cardDescriptionExpandButton} onClick={expandDescription}>
-						<img className="openIcon svgIcon" src={plusIcon} alt="Expand Description" />
+						<img className="svgIcon" src={plusIcon} alt="Expand Description" />
 						<img className="closedIcon svgIcon" src={minusIcon} alt="Collapse Description" />
 					</button>
 				) : null}

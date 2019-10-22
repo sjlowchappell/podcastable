@@ -270,17 +270,9 @@ a:hover {
 
 /* Classes for expanding description on cards */
 
-.descriptionOpen {
-	overflow: none;
-}
-
 .descriptionClosed {
 	overflow: hidden;
 	height: 70px;
-}
-
-.openIcon {
-	display: block;
 }
 
 .closedIcon {
