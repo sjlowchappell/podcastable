@@ -36,6 +36,7 @@ class App extends React.Component {
 	};
 
 	// Async function to search for a podcast.
+	// TODO: Need to implement Error Handling.
 	async fetchSearchData(input) {
 		try {
 			const apiData = await axios.get(`${this.API_URL}search`, {
@@ -48,6 +49,7 @@ class App extends React.Component {
 				},
 			});
 			// retrieves the id for the podcast which can be used to get recommendations
+			console.log(apiData);
 			const podcastID = apiData.data.results[0].id;
 			const recommendations = this.fetchRecommendationData(podcastID);
 			// once the recommendations have been received, set the state with the recommendation list
