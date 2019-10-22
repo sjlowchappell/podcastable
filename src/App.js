@@ -19,6 +19,7 @@ class App extends React.Component {
 	API_URL = 'https://listen-api.listennotes.com/api/v2/';
 	API_KEY = '576ca4c5e0c347949c82d6b8f674a9cc';
 
+	// Handle form submit by making an api call based on user input, then resets user input
 	handleSubmit = e => {
 		e.preventDefault();
 		this.fetchSearchData(this.state.podcastInput);
@@ -27,12 +28,14 @@ class App extends React.Component {
 		});
 	};
 
+	// When user types into search box, state is updated with new value
 	handleChange = e => {
 		this.setState({
 			[e.target.name]: e.target.value,
 		});
 	};
 
+	// Async function to search for a podcast.
 	async fetchSearchData(input) {
 		try {
 			const apiData = await axios.get(`${this.API_URL}search`, {
@@ -44,8 +47,10 @@ class App extends React.Component {
 					type: 'podcast',
 				},
 			});
-			const results = apiData.data.results[0].id;
-			const recommendations = this.fetchRecommendationData(results);
+			// retrieves the id for the podcast which can be used to get recommendations
+			const podcastID = apiData.data.results[0].id;
+			const recommendations = this.fetchRecommendationData(podcastID);
+			// once the recommendations have been received, set the state with the recommendation list
 			recommendations.then(result => {
 				this.setState({
 					searchedPodcast: apiData.data.results[0],
@@ -57,6 +62,7 @@ class App extends React.Component {
 		}
 	}
 
+	// Using ID from previous API call, fetch recommendation data from Listen Notes API
 	async fetchRecommendationData(id) {
 		try {
 			const apiData = await axios.get(`${this.API_URL}podcasts/${id}/recommendations`, {
@@ -68,6 +74,7 @@ class App extends React.Component {
 				},
 			});
 			const recommendations = apiData.data.recommendations;
+			// return recommendations once they've been received
 			return recommendations;
 		} catch (err) {
 			console.log(err);
@@ -86,14 +93,13 @@ class App extends React.Component {
 						podcastInput={this.state.podcastInput}
 					/>
 
-					<section id="results">
-						{this.state.recommendationsList.length !== 0 ? (
-							<Recomendations
-								recommendationsList={this.state.recommendationsList}
-								searchedPodcast={this.state.searchedPodcast}
-							/>
-						) : null}
-					</section>
+					{/* When a recommendations liste exists, print recommendations to screen */}
+					{this.state.recommendationsList.length !== 0 ? (
+						<Recomendations
+							recommendationsList={this.state.recommendationsList}
+							searchedPodcast={this.state.searchedPodcast}
+						/>
+					) : null}
 				</main>
 
 				<Footer />
