@@ -60,6 +60,7 @@
 	width: 40px;
 	padding: 0px;
 }
+
 .cardDescriptionExpandButton:focus {
 	outline: 0;
 }

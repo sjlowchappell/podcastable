@@ -4,7 +4,7 @@ import plusIcon from '../assets/plus.svg';
 import minusIcon from '../assets/minus.svg';
 
 const Card = ({ podcast }) => {
-	// Expand description allows user to open and close description based on length
+	// Expand description allows user to open and close description based on length of description. Toggles classes that either display or hide content
 	const expandDescription = e => {
 		e.stopPropagation();
 		const description = e.target.parentElement.previousElementSibling;

@@ -9,6 +9,7 @@ const Header = () => {
 				<p className={headerStyles.subtitle}>Listen to more of what you love.</p>
 				<div className={headerStyles.linkToSearch}>
 					<a href="#search">
+						{/* using inline SVG in order to change color easily */}
 						<svg
 							className={headerStyles.chevron}
 							viewBox="1 -27 511.99982 511"
