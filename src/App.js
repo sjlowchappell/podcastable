@@ -13,6 +13,7 @@ class App extends React.Component {
 			podcastInput: '',
 			searchedPodcast: {},
 			recommendationsList: [],
+			emptyResults: false,
 		};
 	}
 
@@ -23,8 +24,12 @@ class App extends React.Component {
 	handleSubmit = e => {
 		e.preventDefault();
 		this.fetchSearchData(this.state.podcastInput);
+		if (this.state.recommendationsList.length !== 0) {
+			console.log('no results!');
+		}
 		this.setState({
 			podcastInput: '',
+			emptyResults: false,
 		});
 	};
 
@@ -34,6 +39,8 @@ class App extends React.Component {
 			[e.target.name]: e.target.value,
 		});
 	};
+
+	printError = () => {};
 
 	// Async function to search for a podcast.
 	// TODO: Need to implement Error Handling.
@@ -49,16 +56,22 @@ class App extends React.Component {
 				},
 			});
 			// retrieves the id for the podcast which can be used to get recommendations
-			console.log(apiData);
-			const podcastID = apiData.data.results[0].id;
-			const recommendations = this.fetchRecommendationData(podcastID);
-			// once the recommendations have been received, set the state with the recommendation list
-			recommendations.then(result => {
-				this.setState({
-					searchedPodcast: apiData.data.results[0],
-					recommendationsList: result,
+			console.log(apiData.data.count);
+			if (apiData.data.count !== 0) {
+				const podcastID = apiData.data.results[0].id;
+				const recommendations = this.fetchRecommendationData(podcastID);
+				// once the recommendations have been received, set the state with the recommendation list
+				recommendations.then(result => {
+					this.setState({
+						searchedPodcast: apiData.data.results[0],
+						recommendationsList: result,
+					});
 				});
-			});
+			} else {
+				this.setState({
+					emptyResults: true,
+				});
+			}
 		} catch (err) {
 			console.log(err);
 		}
@@ -95,11 +108,12 @@ class App extends React.Component {
 						podcastInput={this.state.podcastInput}
 					/>
 
-					{/* When a recommendations liste exists, print recommendations to screen */}
-					{this.state.recommendationsList.length !== 0 ? (
+					{/* When a recommendations list exists, or no results were returned, print recommendations (or error message) to screen */}
+					{this.state.recommendationsList.length !== 0 || this.state.emptyResults ? (
 						<Recomendations
 							recommendationsList={this.state.recommendationsList}
 							searchedPodcast={this.state.searchedPodcast}
+							emptyResults={this.state.emptyResults}
 						/>
 					) : null}
 				</main>
