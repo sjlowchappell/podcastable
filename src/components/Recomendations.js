@@ -7,7 +7,7 @@ const Recomendations = ({ searchedPodcast, recommendationsList, emptyResults }) 
 			<div className="wrapper">
 				{emptyResults ? (
 					<p className="errorMessage">
-						Sorry! We couldn't find recommendations for that podcast. Please try again.
+						Sorry! We couldn't find recommendations for that search. Please try again.
 					</p>
 				) : (
 					<>
