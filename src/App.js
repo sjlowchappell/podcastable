@@ -24,9 +24,6 @@ class App extends React.Component {
 	handleSubmit = e => {
 		e.preventDefault();
 		this.fetchSearchData(this.state.podcastInput);
-		if (this.state.recommendationsList.length !== 0) {
-			console.log('no results!');
-		}
 		this.setState({
 			podcastInput: '',
 			emptyResults: false,
@@ -56,7 +53,6 @@ class App extends React.Component {
 				},
 			});
 			// retrieves the id for the podcast which can be used to get recommendations
-			console.log(apiData.data.count);
 			if (apiData.data.count !== 0) {
 				const podcastID = apiData.data.results[0].id;
 				const recommendations = this.fetchRecommendationData(podcastID);
@@ -73,7 +69,9 @@ class App extends React.Component {
 				});
 			}
 		} catch (err) {
-			console.log(err);
+			this.setState({
+				emptyResults: true,
+			});
 		}
 	}
 
@@ -92,7 +90,9 @@ class App extends React.Component {
 			// return recommendations once they've been received
 			return recommendations;
 		} catch (err) {
-			console.log(err);
+			this.setState({
+				emptyResults: true,
+			});
 		}
 	}
 
