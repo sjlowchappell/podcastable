@@ -17,7 +17,7 @@ const Search = ({ handleSubmit, handleChange, podcastInput }) => {
 					<label htmlFor="podcastInput">Enter the name of your favorite podcast below:</label>
 					<input
 						type="text"
-						placeholder="StartUp"
+						placeholder="Heavyweight"
 						name="podcastInput"
 						onChange={handleChange}
 						value={podcastInput}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
-const Recomendations = ({ searchedPodcast, recommendationsList, emptyResults, handleClick }) => {
+const Recommendations = ({ searchedPodcast, recommendationsList, emptyResults, handleClick }) => {
 	return (
 		<section id="results">
 			<div className="wrapper">
@@ -29,4 +29,4 @@ const Recomendations = ({ searchedPodcast, recommendationsList, emptyResults, ha
 	);
 };
 
-export default Recomendations;
+export default Recommendations;

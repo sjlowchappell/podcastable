@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 import Header from './components/Header.js';
 import Search from './components/Search.js';
-import Recomendations from './components/Recomendations.js';
+import Recommendations from './components/Recommendations';
 import Footer from './components/Footer.js';
 
 class App extends React.Component {
@@ -118,7 +118,7 @@ class App extends React.Component {
 
 					{/* When a recommendations list exists, or no results were returned, print recommendations (or error message) to screen */}
 					{this.state.recommendationsList.length !== 0 || this.state.emptyResults ? (
-						<Recomendations
+						<Recommendations
 							recommendationsList={this.state.recommendationsList}
 							searchedPodcast={this.state.searchedPodcast}
 							emptyResults={this.state.emptyResults}
