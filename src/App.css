@@ -255,7 +255,8 @@ h2 {
 p,
 button,
 input,
-label {
+label,
+a {
 	font-size: 2rem;
 }
 
@@ -268,10 +269,9 @@ a:hover {
 	color: #501b1d;
 }
 
-.errorMessage {
+.centerText {
 	text-align: center;
 	padding: 30px 0px;
-	font-size: 3rem;
 }
 
 /* Button styling */

@@ -38,6 +38,15 @@ class App extends React.Component {
 		});
 	};
 
+	resetButton = e => {
+		this.setState({
+			podcastInput: '',
+			searchedPodcast: {},
+			recommendationsList: [],
+			emptyResults: false,
+		});
+	};
+
 	// Async function to search for a podcast.
 	async fetchSearchData(input) {
 		try {
@@ -113,6 +122,7 @@ class App extends React.Component {
 							recommendationsList={this.state.recommendationsList}
 							searchedPodcast={this.state.searchedPodcast}
 							emptyResults={this.state.emptyResults}
+							handleClick={this.resetButton}
 						/>
 					) : null}
 				</main>
