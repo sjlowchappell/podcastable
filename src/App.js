@@ -26,6 +26,7 @@ class App extends React.Component {
 		this.fetchSearchData(this.state.podcastInput);
 		this.setState({
 			podcastInput: '',
+			recommendationsList: [],
 			emptyResults: false,
 		});
 	};

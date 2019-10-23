@@ -300,3 +300,9 @@ a:hover {
 	color: #2e1114;
 	background: #83677b;
 }
+
+.errorMessage {
+	text-align: center;
+	padding: 30px 0px;
+	font-size: 3rem;
+}

@@ -6,7 +6,9 @@ const Recomendations = ({ searchedPodcast, recommendationsList, emptyResults }) 
 		<section id="results">
 			<div className="wrapper">
 				{emptyResults ? (
-					<p>Sorry! We couldn't find recommendations for that podcast. Please try again.</p>
+					<p className="errorMessage">
+						Sorry! We couldn't find recommendations for that podcast. Please try again.
+					</p>
 				) : (
 					<>
 						<h2>Based on your interest in {searchedPodcast.title_original}, we'd recommend:</h2>
