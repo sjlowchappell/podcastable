@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Header from './components/Header.js';
@@ -6,7 +6,7 @@ import Search from './components/Search.js';
 import Recommendations from './components/Recommendations';
 import Footer from './components/Footer.js';
 
-class App extends React.Component {
+class App extends Component {
 	constructor() {
 		super();
 		this.state = {
