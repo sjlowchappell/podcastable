@@ -24,7 +24,9 @@ const Search = ({ handleSubmit, handleChange, podcastInput }) => {
 						id="podcastInput"
 						className={searchStyles.formInput}
 					/>
-					<button className="button">Submit</button>
+					<button className="button" type="submit">
+						Submit
+					</button>
 				</form>
 			</div>
 		</section>
