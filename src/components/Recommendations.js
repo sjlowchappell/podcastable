@@ -20,8 +20,8 @@ const Recommendations = ({ searchedPodcast, recommendationsList, emptyResults, h
 					</>
 				)}
 				<div className="centerText">
-					<a href="#search" onClick={handleClick}>
-						<button className="button">Start Over</button>
+					<a href="#search" onClick={handleClick} className="button">
+						Start Over
 					</a>
 				</div>
 			</div>
