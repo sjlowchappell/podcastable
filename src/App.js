@@ -14,6 +14,7 @@ class App extends Component {
 			searchedPodcast: {},
 			recommendationsList: [],
 			emptyResults: false,
+			isSubmitted: false,
 		};
 	}
 
@@ -28,6 +29,7 @@ class App extends Component {
 			podcastInput: '',
 			recommendationsList: [],
 			emptyResults: false,
+			isSubmitted: true,
 		});
 	};
 
@@ -44,6 +46,7 @@ class App extends Component {
 			searchedPodcast: {},
 			recommendationsList: [],
 			emptyResults: false,
+			isSubmitted: false,
 		});
 	};
 
@@ -115,6 +118,19 @@ class App extends Component {
 						handleChange={this.handleChange}
 						podcastInput={this.state.podcastInput}
 					/>
+
+					{/* On submit, display CSS Loader. Replace with the below when finished */}
+					{/* CSS loader taken directly from: https://loading.io/css/ */}
+					{this.state.isSubmitted === true &&
+					this.state.recommendationsList.length === 0 &&
+					this.state.emptyResults === false ? (
+						<div className="lds-ring">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					) : null}
 
 					{/* When a recommendations list exists, or no results were returned, print recommendations (or error message) to screen */}
 					{this.state.recommendationsList.length !== 0 || this.state.emptyResults ? (
