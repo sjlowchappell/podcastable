@@ -61,10 +61,6 @@
 	padding: 0px;
 }
 
-.cardDescriptionExpandButton:focus {
-	outline: 0;
-}
-
 .cardDescriptionExpandButton:hover {
 	filter: brightness(0) saturate(100%) invert(6%) sepia(26%) saturate(3761%) hue-rotate(324deg) brightness(101%)
 		contrast(94%);
