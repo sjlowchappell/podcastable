@@ -65,3 +65,19 @@
 	filter: brightness(0) saturate(100%) invert(6%) sepia(26%) saturate(3761%) hue-rotate(324deg) brightness(101%)
 		contrast(94%);
 }
+
+@media (max-width: 600px) {
+	.cardHeading {
+		flex-direction: column;
+	}
+	.cardTitle {
+		margin: 20px 0px 0px 0px;
+		align-self: flex-start;
+	}
+	.cardThumbnail {
+		min-width: 200px;
+	}
+	.cardDescription p {
+		margin-top: auto;
+	}
+}
