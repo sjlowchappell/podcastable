@@ -49,3 +49,24 @@ header {
 		transform: translateY(-12px);
 	}
 }
+
+@media (max-width: 850px) {
+	h1 {
+		font-size: 7rem;
+	}
+}
+
+@media (max-width: 600px) {
+	h1 {
+		font-size: 5rem;
+	}
+}
+
+@media (max-width: 400px) {
+	h1 {
+		font-size: 4rem;
+	}
+	.subtitle {
+		font-size: 2rem;
+	}
+}
