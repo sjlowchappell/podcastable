@@ -350,3 +350,24 @@ a:hover {
 		transform: rotate(360deg);
 	}
 }
+
+@media (max-width: 800px) {
+	.descriptionClosed {
+		overflow: hidden;
+		height: 90px;
+	}
+}
+
+@media (max-width: 550px) {
+	.descriptionClosed {
+		overflow: hidden;
+		height: 130px;
+	}
+}
+
+@media (max-width: 450px) {
+	.descriptionClosed {
+		overflow: hidden;
+		height: 160px;
+	}
+}
