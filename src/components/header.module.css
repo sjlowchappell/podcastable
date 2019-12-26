@@ -60,13 +60,13 @@ header {
 	h1 {
 		font-size: 5rem;
 	}
+	.subtitle {
+		font-size: 2rem;
+	}
 }
 
 @media (max-width: 400px) {
 	h1 {
 		font-size: 4rem;
-	}
-	.subtitle {
-		font-size: 2rem;
 	}
 }
