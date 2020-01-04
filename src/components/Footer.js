@@ -9,7 +9,12 @@ const Footer = () => {
 				<a href="https://www.listennotes.com/api/docs/" className={footerStyles.apiLogo}>
 					<img src={apiLogo} alt="Listen Notes API Logo: Powered by Listen Notes" />
 				</a>
-				<p>© {new Date().getFullYear()} Sam Low-Chappell</p>
+				<p>
+					© {new Date().getFullYear()} designed and built by{' '}
+					<a className={footerStyles.nameLink} href="https://samlow-chappell.com">
+						Sam Low-Chappell
+					</a>
+				</p>
 			</div>
 		</footer>
 	);
