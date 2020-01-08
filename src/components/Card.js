@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import cardStyles from './card.module.css';
+import styles from './card.module.css';
 import plusIcon from '../assets/plus.svg';
 import minusIcon from '../assets/minus.svg';
+import PropTypes from 'prop-types';
 
 class Card extends Component {
 	constructor() {
@@ -23,7 +24,7 @@ class Card extends Component {
 						{/* regex included here because description is sometimes encapsulated in HTML tags and entities. */}
 						{podcastDescription}
 					</p>
-					<button className={cardStyles.cardDescriptionExpandButton} onClick={this.expandDescription}>
+					<button className={styles.cardDescriptionExpandButton} onClick={this.expandDescription}>
 						<img className="svgIcon" src={plusIcon} alt="Expand Description" />
 					</button>
 				</>
@@ -35,7 +36,7 @@ class Card extends Component {
 						{/* regex included here because description is sometimes encapsulated in HTML tags and entities. */}
 						{podcastDescription}
 					</p>
-					<button className={cardStyles.cardDescriptionExpandButton} onClick={this.expandDescription}>
+					<button className={styles.cardDescriptionExpandButton} onClick={this.expandDescription}>
 						<img className="svgIcon" src={minusIcon} alt="Collapse Description" />
 					</button>
 				</>
@@ -44,21 +45,22 @@ class Card extends Component {
 	};
 	render() {
 		const { podcast } = this.props;
-		const podcastDescription = podcast.description.replace(/<[^>]+>/g, '').replace(/&#{0,1}[a-z0-9]+;/gi, ' ');
+		const { website, image, title, publisher, description } = podcast;
+		const podcastDescription = description.replace(/<[^>]+>/g, '').replace(/&#{0,1}[a-z0-9]+;/gi, ' ');
 		return (
-			<li className={cardStyles.card}>
-				<div className={cardStyles.cardHeading}>
-					<a href={podcast.website} className={cardStyles.cardThumbnail}>
-						<img src={podcast.image} alt={`Thumbnail for the ${podcast.title} podcast`} />
+			<li className={styles.card}>
+				<div className={styles.cardHeading}>
+					<a href={website} className={styles.cardThumbnail}>
+						<img src={image} alt={`Thumbnail for the ${title} podcast`} />
 					</a>
-					<div className={cardStyles.cardTitle}>
-						<a href={podcast.website}>
-							<h2>{podcast.title}</h2>
+					<div className={styles.cardTitle}>
+						<a href={website}>
+							<h2>{title}</h2>
 						</a>
-						<p className={cardStyles.cardSubtitle}>{podcast.publisher}</p>
+						<p className={styles.cardSubtitle}>{publisher}</p>
 					</div>
 				</div>
-				<div className={cardStyles.cardDescription}>
+				<div className={styles.cardDescription}>
 					{/* if the description is too long, add a button to expand it */}
 					{podcastDescription.length > 175 ? (
 						this.largeDescription(podcastDescription)
@@ -70,5 +72,9 @@ class Card extends Component {
 		);
 	}
 }
+
+Card.propTypes = {
+	podcast: PropTypes.object,
+};
 
 export default Card;

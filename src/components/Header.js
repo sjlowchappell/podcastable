@@ -1,17 +1,17 @@
 import React from 'react';
-import headerStyles from './header.module.css';
+import styles from './header.module.css';
 
 const Header = () => {
 	return (
 		<header>
 			<div className="wrapper">
 				<h1>Podcastable</h1>
-				<p className={headerStyles.subtitle}>Listen to more of what you love.</p>
-				<div className={headerStyles.linkToSearch}>
+				<p className={styles.subtitle}>Listen to more of what you love.</p>
+				<div className={styles.linkToSearch}>
 					<a href="#search">
 						{/* using inline SVG in order to change color easily */}
 						<svg
-							className={headerStyles.chevron}
+							className={styles.chevron}
 							viewBox="1 -27 511.99982 511"
 							xmlns="http://www.w3.org/2000/svg"
 						>

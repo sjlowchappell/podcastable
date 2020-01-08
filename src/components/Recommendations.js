@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import PropTypes from 'prop-types';
 
 const Recommendations = ({ searchedPodcast, recommendationsList, emptyResults, handleClick }) => {
 	return (
@@ -27,6 +28,13 @@ const Recommendations = ({ searchedPodcast, recommendationsList, emptyResults, h
 			</div>
 		</section>
 	);
+};
+
+Recommendations.propTypes = {
+	searchedPodcast: PropTypes.string,
+	recommendationsList: PropTypes.array,
+	emptyResults: PropTypes.bool,
+	handleClick: PropTypes.func,
 };
 
 export default Recommendations;
