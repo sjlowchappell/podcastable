@@ -31,7 +31,7 @@ const Recommendations = ({ searchedPodcast, recommendationsList, emptyResults, h
 };
 
 Recommendations.propTypes = {
-	searchedPodcast: PropTypes.string,
+	searchedPodcast: PropTypes.object,
 	recommendationsList: PropTypes.array,
 	emptyResults: PropTypes.bool,
 	handleClick: PropTypes.func,

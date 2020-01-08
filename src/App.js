@@ -5,6 +5,7 @@ import Header from './components/Header.js';
 import Search from './components/Search.js';
 import Recommendations from './components/Recommendations';
 import Footer from './components/Footer.js';
+import LoadingCircle from './components/LoadingCircle';
 
 class App extends Component {
 	constructor() {
@@ -124,12 +125,7 @@ class App extends Component {
 					{this.state.isSubmitted === true &&
 					this.state.recommendationsList.length === 0 &&
 					this.state.emptyResults === false ? (
-						<div className="lds-ring">
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
+						<LoadingCircle />
 					) : null}
 
 					{/* When a recommendations list exists, or no results were returned, print recommendations (or error message) to screen */}
